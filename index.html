@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Wantering Game</title>
+    <title>Plant Watering Game</title>
     <link rel="stylesheet" href="style.css">
     <script src="sw.js"></script>
     <script src="script.js"></script>
-    <meta name="keywords" content="game, plant, water, fun, score, points, grow, shrink, die, water plant, water game, plant game, fun game, web game, html5 games">
-    <meta name="description" content="A simple, fun, and relaxing game, good for fixing boredom!">
-    <meta name="og:title" content="Plant Wantering Game">
-    <meta name="og:description" content="A simple, fun, and relaxing game, good for fixing boredom!">
-    <meta name="og:image" content="desktopscreenshot.png">
+    <meta name="keywords" content="game, plant, water, fun, score, points, grow, shrink, water plant, water game, plant game, fun game, web game, html5 games">
+    <meta name="description" content="A simple, fun, and relaxing game, good for curing boredom!">
+    <meta name="og:title" content="Plant Watering Game">
+    <meta name="og:description" content="A simple, fun, and relaxing game, good for curing boredom!">
+    <meta name="og:image" content="https://plant-watering-game.vercel.app/desktopscreenshot.png">
     <meta name="og:url" content="water-planting-game.vercel.app">
-    <meta name="og:site_name" content="Plant Wantering Game">
+    <meta name="og:site_name" content="Plant Watering Game">
     <meta name="og:type" content="website">
     <meta name="og:locale" content="en_US">
     <meta name="og:locale:alternate" content="en_GB">
@@ -33,7 +33,7 @@
 
 <body class="main" id="main" onload="initializeGame()">
     <div class="tutorial" id="tutorial">
-        <h1>🌱 Plant Wantering Game</h1>
+        <h1>🌱 Plant Watering Game</h1>
         <p style="line-height: 30px;">
             Click on the water droplet button to water the plant. 
             <br>
@@ -50,9 +50,9 @@
     <div id="game">
             <p id="plant" style="font-size:20px;">🌱</p>
         <div id="maininfo">
-            <button id="waterplant" title="Press this button to start" onclick="waterPlant()">💧</button>
-            <button id="help" onclick="openTutorial()">❓</button>
-            <button id="reset" onclick="resetGame()">🔄</button>
+            <button id="waterplant" title="Press this button to water the plant" onclick="waterPlant()">💧</button>
+            <button id="help" title="Press this button to open the tutorial" onclick="openTutorial()">❓</button>
+            <button id="reset" title="Press this button to reset the game" onclick="resetGame()">🔄</button>
             <p class="scoreitem">Score: <span id="score">0</span></p>
         </div>
     </div>

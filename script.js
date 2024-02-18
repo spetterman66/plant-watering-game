@@ -65,3 +65,25 @@ function resetGame() {
     localStorage.removeItem('lastWatered');
     location.reload();
 }
+
+// make use of the gamepad API to control the game. if the gamepad is connected, the user can water the plant by pressing the A button
+if (!('getGamepads' in navigator)) {
+    alert('Your browser does not support gamepads. Try using Google Chrome or Mozilla Firefox.');
+}
+window.addEventListener("gamepadconnected", function(e) {
+    console.log("Gamepad connected, index: " + e.gamepad.index);
+});
+
+window.addEventListener("gamepaddisconnected", function(e) {
+    console.log("Gamepad disconnected, index: " + e.gamepad.index);
+});
+function checkGamepad() {
+    var gp = navigator.getGamepads()[0];
+    if (gp) {  
+        // if any of the four primary buttons are pressed, water the plant
+        if (gp.buttons[0].pressed == true || gp.buttons[1].pressed == true || gp.buttons[2].pressed == true || gp.buttons[3].pressed == true) {
+            waterPlant();
+        }
+    }
+}
+setInterval(checkGamepad, 100);
