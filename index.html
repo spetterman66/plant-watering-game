@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Planting Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="sw.js"></script>
+    <script src="script.js"></script>
+    <meta name="keywords" content="game, plant, water, fun, score, points, grow, shrink, die, water plant, water game, plant game, fun game, web game, html5 games">
+    <meta name="description" content="A simple, fun, and relaxing game, good for fixing boredom!">
+    <meta name="og:title" content="Water Planting Game">
+    <meta name="og:description" content="A simple, fun, and relaxing game, good for fixing boredom!">
+    <meta name="og:image" content="desktopscreenshot.png">
+    <meta name="og:url" content="waterplantinggame.vercel.app">
+    <meta name="og:site_name" content="Water Planting Game">
+    <meta name="og:type" content="website">
+    <meta name="og:locale" content="en_US">
+    <meta name="og:locale:alternate" content="en_GB">
+    <meta name="og:locale:alternate" content="en_CA">
+    <meta name="og:determiner" content="the">
+    <meta name="twitter:card" content="summary">
+    <meta name="author" content="https://github.com/spetterman66">
+    <meta name="robots" content="index, follow">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#32CD32">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap">
+
+</head>
+
+<body class="main" id="main" onload="initializeGame()">
+    <div class="tutorial" id="tutorial">
+        <h1>🌱 Water Planting Game</h1>
+        <p style="line-height: 30px;">
+            Click on the water droplet button to water the plant. 
+            <br>
+            The button will be disabled for 5 seconds after clicking it.
+            <br>
+             The plant will grow and you will get points. 
+            <br>
+            The plant will shrink if you don't water it.
+            <br>
+            You will lose points if the plant dies.
+        </p>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+    <div id="game">
+            <p id="plant" style="font-size:20px;">🌱</p>
+        <div id="maininfo">
+            <button id="waterplant" title="Press this button to start" onclick="waterPlant()">💧</button>
+            <button id="help" onclick="openTutorial()">❓</button>
+            <button id="reset" onclick="resetGame()">🔄</button>
+            <p class="scoreitem">Score: <span id="score">0</span></p>
+        </div>
+    </div>
+</body>
+
+</html>

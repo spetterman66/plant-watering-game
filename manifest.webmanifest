@@ -1,0 +1,47 @@
+{
+    "name": "Water Planting Game",
+    "short_name": "🌱",
+    "description": "A fun game to water your plants and keep them alive! Great for curing boredom.",
+    "start_url": "/",
+    "lang": "en-US",
+    "orientation": "any",
+    "display": "standalone",
+    "display-override": "standalone",
+    "background_color": "#32CD32",
+    "theme_color": "#32CD32",
+    "icons": [
+        {
+            "src": "planticon.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "largeplanticon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "xxlplanticon.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "mobilescreenshot.png",
+            "sizes": "828x1792",
+            "type": "image/png"
+        },
+        {
+            "src": "desktopscreenshot.png",
+            "sizes": "2880x1638",
+            "type": "image/png",
+            "form_factor": "wide"
+        }
+    ],
+    "categories": [
+        "games",
+        "entertainment"
+    ],
+    "theme-color": "#32CD32"
+}
