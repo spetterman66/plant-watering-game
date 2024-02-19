@@ -209,7 +209,7 @@ button:disabled {
 @media screen and (max-width: 600px) {
 
     #maininfo {
-        padding-bottom: 80px !important;
+        padding-bottom: 90px !important;
     }
 
     button {
