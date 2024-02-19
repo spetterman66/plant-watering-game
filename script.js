@@ -177,6 +177,10 @@ document.body.addEventListener('keydown', e => {
 document.body.addEventListener('keydown', e => {
     if (e.key === "s") saveGame()
 })
+// if the "\" key is pressed, open the keyboard shortcuts window
+document.body.addEventListener('keydown', e => {
+    if (e.key === "\\") openKeyboardShortcuts()
+})
 // if the "?" key is pressed, open the keyboard shortcuts window
 document.body.addEventListener('keydown', e => {
     if (e.key === "?") openKeyboardShortcuts()
