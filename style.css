@@ -26,7 +26,8 @@ body {
     overflow: hidden;
 }
 
-.tutorial, .keyboardshortcuts {
+.tutorial,
+.keyboardshortcuts {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -60,7 +61,8 @@ body {
     z-index: 1;
 }
 
-.tutorial>button, .keyboardshortcuts>button {
+.tutorial>button,
+.keyboardshortcuts>button {
     margin-top: 20px;
     padding: 10px 20px;
     border: none;
@@ -132,6 +134,12 @@ body {
     transition: 0.3s;
 }
 
+button:focus-visible {
+    outline-color: rgb(204, 133, 1);
+    outline-style: solid;
+    outline-width: 5px;
+}
+
 #maininfo>button:hover,
 #maininfo>button:active,
 #maininfo>button:focus {
@@ -179,7 +187,7 @@ body {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    background-color: yellowgreen   ;
+    background-color: yellowgreen;
     color: black;
     line-height: 47.5px;
     padding-right: 10px;
@@ -200,9 +208,19 @@ button:disabled {
 
 @media screen and (max-width: 600px) {
 
-    html,
-    body {
-        padding-bottom: 40px;
+    #maininfo {
+        padding-bottom: 40px !important;
+    }
+
+    button {
+        padding: 5px 10px !important;
+    }
+
+    .scoreitem {
+        line-height: 38px;
+        padding-right: 5px;
+        padding-left: 5px;
+        height: 36px;
     }
 }
 
@@ -212,7 +230,4 @@ body.dark {
     background: -moz-linear-gradient(bottom, rgb(2, 94, 94), rgb(204, 133, 1)) !important;
     background: -o-linear-gradient(bottom, rgb(2, 94, 94), rgb(204, 133, 1)) !important;
     background: linear-gradient(to top, rgb(2, 94, 94), rgb(204, 133, 1)) !important;
-}
-a:visited {
-    color: aqua;
 }

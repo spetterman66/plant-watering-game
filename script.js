@@ -3,12 +3,13 @@ function startGame() {
     document.getElementById('tutorial').style.display = 'none';
 }
 function initializeGame() {
-    if (localStorage.getItem('gameStarted'), localStorage.getItem('wateredPlant'), localStorage.getItem('plantSize'), localStorage.getItem('score'), localStorage.getItem('theme')) {
+    if (localStorage.getItem('gameStarted'), localStorage.getItem('wateredPlant'), localStorage.getItem('plantSize'), localStorage.getItem('score'), localStorage.getItem('theme'), localStorage.getItem('currentPlant')) {
         document.getElementById('tutorial').style.display = 'none';
         document.getElementById('plant').style.display = 'block';
         document.getElementById('plant').style.fontSize = `${localStorage.getItem('plantSize')}px`;
         document.getElementById('score').innerHTML = localStorage.getItem('score');
         document.body.classList.toggle(localStorage.getItem('theme'));
+        document.getElementById('plant').innerHTML = localStorage.getItem('currentPlant');
     }
     else {
         document.getElementById('tutorial').style.display = 'flex';
@@ -57,6 +58,7 @@ function waterPlant() {
     if (plantsize === 150) {
         plant.innerHTML = '🌴';
     }
+    localStorage.setItem('currentPlant', plant.innerHTML);
 }
 // every 5 minutes, a flower will appear on the screen. if the user clicks on the flower, 10 points will be added to the score
 function flower() {
@@ -165,9 +167,12 @@ function toggleTheme() {
     document.getElementById('toggle-theme').innerHTML = localStorage.getItem("theme") === "light" ? '☀️' : '🌙';
 }
 
-// if the space key is pressed, water the plant
+// if the space key is pressed, water the plant, then disable the button for 5 seconds
 document.body.addEventListener('keydown', e => {
     if (e.code === "Space") waterPlant()
+    // if the space key is pressed, don't allow the user to water the plant for 5 seconds
+    var btn = document.getElementById('waterplant');
+    if (btn.disabled) return;
 })
 // if the "t" key is pressed, open the tutorial
 document.body.addEventListener('keydown', e => {
@@ -177,17 +182,14 @@ document.body.addEventListener('keydown', e => {
 document.body.addEventListener('keydown', e => {
     if (e.key === "s") saveGame()
 })
-// if the "\" key is pressed, open the keyboard shortcuts window
+// if the "l" key is pressed, load the game
 document.body.addEventListener('keydown', e => {
-    if (e.key === "\\") openKeyboardShortcuts()
+    if (e.key === "l") loadGame()
 })
 // if the "?" key is pressed, open the keyboard shortcuts window
 document.body.addEventListener('keydown', e => {
-    if (e.key === "?") openKeyboardShortcuts()
-})
-// if the escape key is pressed, close the keyboard shortcuts window
-document.body.addEventListener('keydown', e => {
-    if (e.code === "Escape") closeKeyboardShortcuts()
+    if (e.key === "\\") openKeyboardShortcuts()
+    else closeKeyboardShortcuts()
 })
 // if the "d" key is pressed, toggle the theme
 document.body.addEventListener('keydown', e => {
@@ -203,3 +205,10 @@ function closeKeyboardShortcuts() {
 
 // my game is finally complete! i hope you enjoy playing it! 😊
 // now, i'm off to plant a real flower 🌺
+/* i love comments, don't you? 😊 */
+/* come on, play the game instead of reading the comments 😄 */
+/* no more comments, promise 😊 */
+/* 🏖️🌊 */
+/* 💻🌺 */
+/* 🌱 */
+let spetterman66 = "👋"
