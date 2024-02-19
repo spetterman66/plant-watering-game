@@ -7,7 +7,7 @@
     <title>Plant Watering Game</title>
     <link rel="stylesheet" href="style.css">
     <script src="sw.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script src="https://unpkg.com/notiflix@3.2.7/dist/notiflix-notify-aio-3.2.7.min.js"></script>
     <meta name="keywords" content="game, plant, water, fun, score, points, grow, shrink, water plant, water game, plant game, fun game, web game, html5 games">
     <meta name="description" content="A simple, fun, and relaxing game, good for curing boredom!">
@@ -37,6 +37,11 @@
     <div class="tutorial" id="tutorial">
         <h1>🌱 Plant Watering Game</h1>
         <p style="line-height: 30px;">
+            Welcome to the Plant Watering Game!
+            <br>
+            This game is open-source. You can find the source code on <a href="https://github.com/spetterman66/plant-watering-game">GitHub</a>.
+            <br>
+            <br>
             Click on the water droplet button to water the plant. 
             <br>
             The button will be disabled for 5 seconds after clicking it.
@@ -49,6 +54,26 @@
         </p>
         <button onclick="startGame()">Start Game</button>
     </div>
+    <div class="keyboardshortcuts" id="keyboardshortcuts" style="display:none;">
+        <h1>🌱 Plant Watering Game</h1>
+        <p style="line-height: 30px;">
+            Keyboard Shortcuts:
+            <br>
+            <br>
+            Press the space key to water the plant.
+            <br>
+            Press <kbd>T</kbd> to open the tutorial.
+            <br>
+            Press <kbd>S</kbd> to save your game.
+            <br>
+            Press <kbd>L</kbd> to load your game.
+            <br>
+            Press <kbd>D</kbd> to toggle the theme.
+            <br>
+            Press escape to close this window.
+        </p>
+        <button onclick="closeKeyboardShortcuts()">Close Window</button>
+    </div>
     <div id="game">
             <p id="plant" style="font-size:20px;">🌱</p>
         <div id="maininfo">
@@ -56,6 +81,7 @@
             <button id="help" title="Press this button to open the tutorial" onclick="openTutorial()">❓</button>
             <button id="save" title="Press this button to save your game" onclick="saveGame()">💾</button>
             <button id="load" title="Press this button to load your game" onclick="loadGame()">📂</button>
+            <button id="toggle-theme" title="Press this button to toggle the theme" onclick="toggleTheme()">🌙</button>
             <button id="reset" title="Press this button to reset the game" onclick="resetGame()">🔄</button>
             <p class="scoreitem">Score: <span id="score">0</span></p>
         </div>

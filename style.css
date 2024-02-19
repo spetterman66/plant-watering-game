@@ -15,15 +15,18 @@
     display: flex;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
-html, body {
+
+html,
+body {
     font-family: 'Roboto', sans-serif;
     overflow: hidden;
 }
-.tutorial {
+
+.tutorial, .keyboardshortcuts {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -35,34 +38,35 @@ html, body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-       -moz-box-orient: vertical;
-       -moz-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
     text-align: center;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     z-index: 1;
 }
-.tutorial>button {
+
+.tutorial>button, .keyboardshortcuts>button {
     margin-top: 20px;
     padding: 10px 20px;
     border: none;
     -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     background-color: greenyellow;
     color: black;
     font-size: 1.2rem;
@@ -72,12 +76,18 @@ html, body {
     -moz-transition: 0.3s;
     transition: 0.3s;
 }
+
 .tutorial>button:hover,
 .tutorial>button:active,
-.tutorial>button:focus {
+.tutorial>button:focus,
+.keyboardshortcuts>button:hover,
+.keyboardshortcuts>button:active,
+.keyboardshortcuts>button:focus {
+    font-family: 'Roboto', sans-serif;
     background-color: green;
     color: white;
 }
+
 #game {
     display: -webkit-box;
     display: -webkit-flex;
@@ -87,31 +97,32 @@ html, body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-       -moz-box-orient: vertical;
-       -moz-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
-       -moz-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
+
 #maininfo>button {
     margin: 10px;
     padding: 10px 20px;
     border: none;
     -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
-    background-color: greenyellow;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: yellowgreen;
     color: black;
     font-size: 1.2rem;
     cursor: pointer;
@@ -120,14 +131,16 @@ html, body {
     -moz-transition: 0.3s;
     transition: 0.3s;
 }
+
 #maininfo>button:hover,
 #maininfo>button:active,
 #maininfo>button:focus {
     background-color: green;
     color: white;
 }
+
 #maininfo {
-    width:100%;
+    width: 100%;
     text-align: center;
     display: -webkit-box;
     display: -webkit-flex;
@@ -138,33 +151,35 @@ html, body {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
-       -moz-box-orient: horizontal;
-       -moz-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-align: end;
     -webkit-align-items: end;
-       -moz-box-align: end;
-        -ms-flex-align: end;
-            align-items: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+    align-items: end;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
-       -moz-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     position: fixed;
     z-index: 0;
 }
-#game>p{
-    display:none;
+
+#game>p {
+    display: none;
 }
+
 .scoreitem {
     margin: 10px;
     border: none;
     -webkit-border-radius: 5px;
-       -moz-border-radius: 5px;
-            border-radius: 5px;
-    background-color: greenyellow;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: yellowgreen   ;
     color: black;
     line-height: 47.5px;
     padding-right: 10px;
@@ -176,13 +191,28 @@ html, body {
     transition: 0.3s;
     height: 46px;
 }
+
 button:disabled {
-    -webkit-filter:grayscale(100%);
-            filter:grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
     cursor: not-allowed
 }
+
 @media screen and (max-width: 600px) {
-    html, body {
+
+    html,
+    body {
         padding-bottom: 40px;
     }
+}
+
+body.dark {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgb(2, 94, 94)), to(rgb(204, 133, 1))) !important;
+    background: -webkit-linear-gradient(bottom, rgb(2, 94, 94), rgb(204, 133, 1)) !important;
+    background: -moz-linear-gradient(bottom, rgb(2, 94, 94), rgb(204, 133, 1)) !important;
+    background: -o-linear-gradient(bottom, rgb(2, 94, 94), rgb(204, 133, 1)) !important;
+    background: linear-gradient(to top, rgb(2, 94, 94), rgb(204, 133, 1)) !important;
+}
+a:visited {
+    color: aqua;
 }

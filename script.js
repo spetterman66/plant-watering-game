@@ -3,11 +3,12 @@ function startGame() {
     document.getElementById('tutorial').style.display = 'none';
 }
 function initializeGame() {
-    if (localStorage.getItem('gameStarted'), localStorage.getItem('wateredPlant'), localStorage.getItem('plantSize'), localStorage.getItem('score')) {
+    if (localStorage.getItem('gameStarted'), localStorage.getItem('wateredPlant'), localStorage.getItem('plantSize'), localStorage.getItem('score'), localStorage.getItem('theme')) {
         document.getElementById('tutorial').style.display = 'none';
         document.getElementById('plant').style.display = 'block';
         document.getElementById('plant').style.fontSize = `${localStorage.getItem('plantSize')}px`;
         document.getElementById('score').innerHTML = localStorage.getItem('score');
+        document.body.classList.toggle(localStorage.getItem('theme'));
     }
     else {
         document.getElementById('tutorial').style.display = 'flex';
@@ -149,3 +150,52 @@ function loadGame() {
         };
     };
 }
+
+function toggleTheme() {
+    var body = document.body;
+    // if the theme is light, change it to dark. save the theme in local storage
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.toggle('dark');
+        localStorage.setItem("theme", "dark");
+    }
+    else {
+        body.classList.toggle('dark');
+        localStorage.setItem("theme", "light");
+    }
+    document.getElementById('toggle-theme').innerHTML = localStorage.getItem("theme") === "light" ? '☀️' : '🌙';
+}
+
+// if the space key is pressed, water the plant
+document.body.addEventListener('keydown', e => {
+    if (e.code === "Space") waterPlant()
+})
+// if the "t" key is pressed, open the tutorial
+document.body.addEventListener('keydown', e => {
+    if (e.key === "t") openTutorial()
+})
+// if the "s" key is pressed, save the game
+document.body.addEventListener('keydown', e => {
+    if (e.key === "s") saveGame()
+})
+// if the "?" key is pressed, open the keyboard shortcuts window
+document.body.addEventListener('keydown', e => {
+    if (e.key === "?") openKeyboardShortcuts()
+})
+// if the escape key is pressed, close the keyboard shortcuts window
+document.body.addEventListener('keydown', e => {
+    if (e.code === "Escape") closeKeyboardShortcuts()
+})
+// if the "d" key is pressed, toggle the theme
+document.body.addEventListener('keydown', e => {
+    if (e.key === "d") toggleTheme()
+})
+
+function openKeyboardShortcuts() {
+    document.getElementById('keyboardshortcuts').style.display = 'flex';
+}
+function closeKeyboardShortcuts() {
+    document.getElementById('keyboardshortcuts').style.display = 'none';
+}
+
+// my game is finally complete! i hope you enjoy playing it! 😊
+// now, i'm off to plant a real flower 🌺
