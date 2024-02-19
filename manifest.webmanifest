@@ -6,7 +6,7 @@
     "lang": "en-US",
     "orientation": "any",
     "display": "standalone",
-    "display-override": "standalone",
+    "display_override": "standalone",
     "background_color": "#32CD32",
     "theme_color": "#32CD32",
     "icons": [
