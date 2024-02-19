@@ -36,7 +36,7 @@ function waterPlant() {
     let audio = new Audio('watering_plant.mp3');
     audio.play();
     // if plant hasn't been watered for 1 day, reduce the size of the plant
-    localStorage.setItem('lastWatered' , new Date());
+    localStorage.setItem('lastWatered', new Date());
     // compare the last watered date with current date
     var currentTime = new Date();
     var lastWatered = new Date(localStorage.getItem('lastWatered'));
@@ -57,6 +57,26 @@ function waterPlant() {
         plant.innerHTML = '🌴';
     }
 }
+// every 5 minutes, a flower will appear on the screen. if the user clicks on the flower, 10 points will be added to the score
+function flower() {
+    let flower = document.createElement('p');
+    flower.innerHTML = '🌸';
+    flower.style.position = 'absolute';
+    flower.style.top = '-20px';
+    flower.style.left = `${Math.random() * window.innerWidth}px`;
+    flower.style.fontSize = `${Math.random() * 100}px`;
+    flower.style.cursor = 'pointer';
+    document.body.appendChild(flower);
+    flower.addEventListener('click', () => {
+        document.body.removeChild(flower);
+        score.innerHTML = parseInt(score.innerHTML) + 10;
+        let plant = document.getElementById('plant');
+        let plantsize = parseInt(window.getComputedStyle(plant, null).getPropertyValue('font-size'));
+        plantsize += 10;
+    });
+}
+// call the flower function every 5 minutes
+setInterval(flower, 300000);
 function resetGame() {
     localStorage.removeItem('gameStarted');
     localStorage.removeItem('wateredPlant');
@@ -66,20 +86,20 @@ function resetGame() {
     location.reload();
 }
 
-// make use of the gamepad API to control the game. if the gamepad is connected, the user can water the plant by pressing the A button
+// make use of the gamepad API to control the game. if the gamepad is connected, the user can water the plant.
 if (!('getGamepads' in navigator)) {
     alert('Your browser does not support gamepads. Try using Google Chrome or Mozilla Firefox.');
 }
-window.addEventListener("gamepadconnected", function(e) {
+window.addEventListener("gamepadconnected", function (e) {
     console.log("Gamepad connected, index: " + e.gamepad.index);
 });
 
-window.addEventListener("gamepaddisconnected", function(e) {
+window.addEventListener("gamepaddisconnected", function (e) {
     console.log("Gamepad disconnected, index: " + e.gamepad.index);
 });
 function checkGamepad() {
     var gp = navigator.getGamepads()[0];
-    if (gp) {  
+    if (gp) {
         // if any of the four primary buttons are pressed, water the plant
         if (gp.buttons[0].pressed == true || gp.buttons[1].pressed == true || gp.buttons[2].pressed == true || gp.buttons[3].pressed == true) {
             waterPlant();
@@ -87,3 +107,45 @@ function checkGamepad() {
     }
 }
 setInterval(checkGamepad, 100);
+
+function saveGame() {
+    const gameData = {
+        gameStarted: localStorage.getItem('gameStarted'),
+        wateredPlant: localStorage.getItem('wateredPlant'),
+        plantSize: localStorage.getItem('plantSize'),
+        score: localStorage.getItem('score'),
+        lastWatered: localStorage.getItem('lastWatered')
+    };
+
+    const jsonData = JSON.stringify(gameData);
+    const blob = new Blob([jsonData], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'gameData.json';
+    a.click();
+
+}
+
+function loadGame() {
+    const input = document.createElement('input');
+    input.type = "file";
+    input.accept = "application/json";
+    input.click();
+
+    input.onchange = (event) => {
+        const file = event.target.files[0];
+
+        const reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = () => {
+            const gameData = JSON.parse(reader.result);
+            for (let key in gameData) {
+                localStorage.setItem(key, gameData[key]);
+            }
+
+            location.reload();
+        };
+    };
+}

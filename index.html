@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="sw.js"></script>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/notiflix@3.2.7/dist/notiflix-notify-aio-3.2.7.min.js"></script>
     <meta name="keywords" content="game, plant, water, fun, score, points, grow, shrink, water plant, water game, plant game, fun game, web game, html5 games">
     <meta name="description" content="A simple, fun, and relaxing game, good for curing boredom!">
     <meta name="og:title" content="Plant Watering Game">
@@ -32,6 +33,7 @@
 </head>
 
 <body class="main" id="main" onload="initializeGame()">
+    <noscript>This application requires JavaScript to be enabled.</noscript>
     <div class="tutorial" id="tutorial">
         <h1>🌱 Plant Watering Game</h1>
         <p style="line-height: 30px;">
@@ -52,6 +54,8 @@
         <div id="maininfo">
             <button id="waterplant" title="Press this button to water the plant" onclick="waterPlant()">💧</button>
             <button id="help" title="Press this button to open the tutorial" onclick="openTutorial()">❓</button>
+            <button id="save" title="Press this button to save your game" onclick="saveGame()">💾</button>
+            <button id="load" title="Press this button to load your game" onclick="loadGame()">📂</button>
             <button id="reset" title="Press this button to reset the game" onclick="resetGame()">🔄</button>
             <p class="scoreitem">Score: <span id="score">0</span></p>
         </div>
