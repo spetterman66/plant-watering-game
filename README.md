@@ -31,4 +31,4 @@ On Google Chrome, click the install button on the right side of the address bar.
 - The game is accessible and works with screen readers, keyboard navigation, and gamepads.
 - The game is built with vanilla JavaScript and does not require any third-party libraries.
 ## 🌱How to contribute
-You can contribute to this project by forking it and creating a pull request. You can also report issues and suggest new features. Email me at [17lifers@proton.me](mailto:17lifers@proton.me) if you have any ideas or suggestions.
+You can contribute to this project by forking it and creating a pull request. You can also report issues and suggest new features.
