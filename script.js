@@ -17,6 +17,7 @@ function initializeGame() {
 }
 function openTutorial() {
     document.getElementById('tutorial').style.display = 'flex';
+    document.getElementById('tutorial').ariaHidden = false;
 }
 function waterPlant() {
     let plant = document.getElementById('plant');
@@ -198,9 +199,11 @@ document.body.addEventListener('keydown', e => {
 
 function openKeyboardShortcuts() {
     document.getElementById('keyboardshortcuts').style.display = 'flex';
+    document.getElementById('keyboardshortcuts').style.ariaHidden = false;
 }
 function closeKeyboardShortcuts() {
     document.getElementById('keyboardshortcuts').style.display = 'none';
+    document.getElementById('keyboardshortcuts').style.ariaHidden = true;
 }
 
 // my game is finally complete! i hope you enjoy playing it! 😊

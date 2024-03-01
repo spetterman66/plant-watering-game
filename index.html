@@ -16,7 +16,7 @@
     <meta name="og:description" content="A simple, fun, and relaxing game, good for curing boredom!">
     <meta name="og:image" content="https://plant-watering-game.vercel.app/desktopscreenshot.png">
     <meta name="og:url" content="water-planting-game.vercel.app">
-    <meta name="og:site_name" content="Plant Watering Game">
+    <meta name="og:site_name" content="🌱Plant Watering Game🌱">
     <meta name="og:type" content="website">
     <meta name="og:locale" content="en_US">
     <meta name="og:locale:alternate" content="en_GB">
@@ -35,7 +35,7 @@
 
 <body class="main" id="main" onload="initializeGame()">
     <noscript>This application requires JavaScript to be enabled.</noscript>
-    <div class="tutorial" id="tutorial">
+    <div class="tutorial" id="tutorial" aria-hidden="true">
         <h1>🌱 Plant Watering Game</h1>
         <p style="line-height: 30px;">
             Welcome to the Plant Watering Game!
@@ -56,7 +56,7 @@
         </p>
         <button onclick="startGame()">Start Game</button>
     </div>
-    <div class="keyboardshortcuts" id="keyboardshortcuts" style="display:none;">
+    <div class="keyboardshortcuts" id="keyboardshortcuts" style="display:none;" aria-hidden="true">
         <h1>🌱 Plant Watering Game</h1>
         <p style="line-height: 30px;">
             Keyboard Shortcuts:
@@ -79,13 +79,13 @@
     <div id="game">
         <p id="plant" style="font-size:20px;">🌱</p>
         <div id="maininfo">
-            <button id="waterplant" title="Press this button to water the plant" onclick="waterPlant()">💧</button>
-            <button id="help" title="Press this button to open the tutorial" onclick="openTutorial()">❓</button>
-            <button id="save" title="Press this button to save your game" onclick="saveGame()">💾</button>
-            <button id="load" title="Press this button to load your game" onclick="loadGame()">📂</button>
-            <button id="toggle-theme" title="Press this button to toggle the theme" onclick="toggleTheme()">🌙</button>
-            <button id="reset" title="Press this button to reset the game" onclick="resetGame()">🔄</button>
-            <div class="scoreitem">Score: <span id="score">0</span></div>
+            <button id="waterplant" title="Press this button to water the plant" aria-label="Press this button to water the plant" onclick="waterPlant()">💧</button>
+            <button id="help" title="Press this button to open the tutorial" aria-label="Press this button to open the tutorial" ="openTutorial()">❓</button>
+            <button id="save" title="Press this button to save your game" aria-label="Press this button to save your game" onclick="saveGame()">💾</button>
+            <button id="load" title="Press this button to load your game" aria-label="Press this button to load your game" onclick="loadGame()">📂</button>
+            <button id="toggle-theme" title="Press this button to toggle the theme" aria-label="Press this button to toggle the theme" onclick="toggleTheme()">🌙</button>
+            <button id="reset" title="Press this button to reset the game"  aria-label="Press this button to reset the game" onclick="resetGame()">🔄</button>
+            <div class="scoreitem" title="Your score is displayed here" aria-label="Your score is displayed here">Score: <span id="score">0</span></div>
         </div>
     </div>
 </body>
