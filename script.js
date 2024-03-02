@@ -61,7 +61,7 @@ function waterPlant() {
     }
     localStorage.setItem('currentPlant', plant.innerHTML);
 }
-// every 5 minutes, a flower will appear on the screen. if the user clicks on the flower, 10 points will be added to the score
+// every 5 minutes, a flower will appear on the screen. if the user clicks on the flower, 10 points will be added to the score, and the size of the plant will increase by 10px
 function flower() {
     let flower = document.createElement('p');
     flower.innerHTML = '🌸';
@@ -74,9 +74,11 @@ function flower() {
     flower.addEventListener('click', () => {
         document.body.removeChild(flower);
         score.innerHTML = parseInt(score.innerHTML) + 10;
+        localStorage.setItem('score', score.innerHTML);
         let plant = document.getElementById('plant');
         let plantsize = parseInt(window.getComputedStyle(plant, null).getPropertyValue('font-size'));
-        plantsize += 10;
+        plant.style.fontSize = `${plantsize + 10}px`;
+        localStorage.setItem('plantSize', plantsize);
     });
 }
 // call the flower function every 5 minutes
