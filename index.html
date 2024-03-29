@@ -1,93 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plant Watering Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="sw.js"></script>
     <script src="script.js" defer></script>
-    <script defer data-domain="plant-watering-game.vercel.app" src="https://plausible.io/js/script.js"></script>
-    <meta name="keywords"
-        content="game, plant, water, fun, score, points, grow, shrink, water plant, water game, plant game, fun game, web game, html5 games">
-    <meta name="description" content="A simple, fun, and relaxing game, good for curing boredom!">
-    <meta name="og:title" content="Plant Watering Game">
-    <meta name="og:description" content="A simple, fun, and relaxing game, good for curing boredom!">
-    <meta name="og:image" content="https://plant-watering-game.vercel.app/desktopscreenshot.png">
-    <meta name="og:url" content="water-planting-game.vercel.app">
-    <meta name="og:site_name" content="🌱Plant Watering Game🌱">
-    <meta name="og:type" content="website">
-    <meta name="og:locale" content="en_US">
-    <meta name="og:locale:alternate" content="en_GB">
-    <meta name="og:locale:alternate" content="en_CA">
-    <meta name="og:determiner" content="the">
-    <meta name="twitter:card" content="summary">
-    <meta name="author" content="https://github.com/spetterman66">
-    <meta name="robots" content="index, follow">
-    <link rel="manifest" href="manifest.webmanifest">
-    <meta name="theme-color" content="#32CD32">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap">
+    <meta
+      name="keywords"
+      content="game, plant, water, fun, score, points, grow, shrink, water plant, water game, plant game, fun game, web game, html5 games"
+    />
+    <meta
+      name="description"
+      content="A simple, fun, and relaxing game, good for curing boredom!"
+    />
+    <meta name="og:title" content="Plant Watering Game" />
+    <meta
+      name="og:description"
+      content="A simple, fun, and relaxing game, good for curing boredom!"
+    />
+    <meta
+      name="og:image"
+      content="https://plant-watering-game.vercel.app/desktopscreenshot.png"
+    />
+    <meta name="og:url" content="water-planting-game.vercel.app" />
+    <meta name="og:site_name" content="🌱Plant Watering Game🌱" />
+    <meta name="og:type" content="website" />
+    <meta name="og:locale" content="en_US" />
+    <meta name="og:locale:alternate" content="en_GB" />
+    <meta name="og:locale:alternate" content="en_CA" />
+    <meta name="og:determiner" content="the" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="author" content="https://github.com/spetterman66" />
+    <meta name="robots" content="index, follow" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#32CD32" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+    />
+  </head>
 
-</head>
-
-<body class="main" id="main" onload="initializeGame()">
+  <body class="main" id="main" onload="initializeGame()">
     <noscript>This application requires JavaScript to be enabled.</noscript>
     <div class="tutorial" id="tutorial" aria-hidden="true">
-        <h1>🌱 Plant Watering Game</h1>
-        <p style="line-height: 30px;">
-            Welcome to the Plant Watering Game!
-            <br>
-            This game is open-source. You can find the source code on <a
-                href="https://github.com/spetterman66/plant-watering-game">GitHub</a>.
-            <br>
-            <br>
-            Click on the water droplet button to water the plant.
-            <br>
-            The button will be disabled for 5 seconds after clicking it.
-            <br>
-            The plant will grow and you will get points.
-            <br>
-            The plant will shrink if you don't water it.
-            <br>
-            You will lose points if the plant dies.
-        </p>
-        <button onclick="startGame()">Start Game</button>
+      <h1>🌱 Plant Watering Game</h1>
+      <p style="line-height: 30px">
+        Welcome to the Plant Watering Game!
+        <br />
+        This game is open-source. You can find the source code on
+        <a href="https://github.com/spetterman66/plant-watering-game">GitHub</a
+        >.
+        <br />
+        <br />
+        Click on the water droplet button to water the plant.
+        <br />
+        The button will be disabled for 5 seconds after clicking it.
+        <br />
+        The plant will grow and you will get points.
+        <br />
+        The plant will shrink if you don't water it.
+        <br />
+        You will lose points if the plant dies.
+      </p>
+      <button onclick="startGame()">Start Game</button>
     </div>
-    <div class="keyboardshortcuts" id="keyboardshortcuts" style="display:none;" aria-hidden="true">
-        <h1>🌱 Plant Watering Game</h1>
-        <p style="line-height: 30px;">
-            Keyboard Shortcuts:
-            <br>
-            <br>
-            Press the space key to water the plant.
-            <br>
-            Press <kbd>T</kbd> to open the tutorial.
-            <br>
-            Press <kbd>S</kbd> to save your game.
-            <br>
-            Press <kbd>L</kbd> to load your game.
-            <br>
-            Press <kbd>D</kbd> to toggle the theme.
-            <br>
-            Press any other key to close this window.
-        </p>
-        <button onclick="closeKeyboardShortcuts()">Close Window</button>
+    <div
+      class="keyboardshortcuts"
+      id="keyboardshortcuts"
+      style="display: none"
+      aria-hidden="true"
+    >
+      <h1>🌱 Plant Watering Game</h1>
+      <p style="line-height: 30px">
+        Keyboard Shortcuts:
+        <br />
+        <br />
+        Press the space key to water the plant.
+        <br />
+        Press <kbd>T</kbd> to open the tutorial.
+        <br />
+        Press <kbd>S</kbd> to save your game.
+        <br />
+        Press <kbd>L</kbd> to load your game.
+        <br />
+        Press <kbd>D</kbd> to toggle the theme.
+        <br />
+        Press any other key to close this window.
+      </p>
+      <button onclick="closeKeyboardShortcuts()">Close Window</button>
     </div>
     <div id="game">
-        <p id="plant" style="font-size:20px;">🌱</p>
-        <div id="maininfo">
-            <button id="waterplant" title="Press this button to water the plant" aria-label="Press this button to water the plant" onclick="waterPlant()">💧</button>
-            <button id="help" title="Press this button to open the tutorial" aria-label="Press this button to open the tutorial" ="openTutorial()">❓</button>
-            <button id="save" title="Press this button to save your game" aria-label="Press this button to save your game" onclick="saveGame()">💾</button>
-            <button id="load" title="Press this button to load your game" aria-label="Press this button to load your game" onclick="loadGame()">📂</button>
-            <button id="toggle-theme" title="Press this button to toggle the theme" aria-label="Press this button to toggle the theme" onclick="toggleTheme()">🌙</button>
-            <button id="reset" title="Press this button to reset the game"  aria-label="Press this button to reset the game" onclick="resetGame()">🔄</button>
-            <div class="scoreitem" title="Your score is displayed here" aria-label="Your score is displayed here">Score: <span id="score">0</span></div>
+      <p id="plant" style="font-size: 20px">🌱</p>
+      <div id="maininfo">
+        <button
+          id="waterplant"
+          title="Press this button to water the plant"
+          aria-label="Press this button to water the plant"
+          onclick="waterPlant()"
+        >
+          💧
+        </button>
+        <button
+          id="help"
+          title="Press this button to open the tutorial"
+          aria-label="Press this button to open the tutorial"
+          ="openTutorial()"
+        >
+          ❓
+        </button>
+        <button
+          id="save"
+          title="Press this button to save your game"
+          aria-label="Press this button to save your game"
+          onclick="saveGame()"
+        >
+          💾
+        </button>
+        <button
+          id="load"
+          title="Press this button to load your game"
+          aria-label="Press this button to load your game"
+          onclick="loadGame()"
+        >
+          📂
+        </button>
+        <button
+          id="toggle-theme"
+          title="Press this button to toggle the theme"
+          aria-label="Press this button to toggle the theme"
+          onclick="toggleTheme()"
+        >
+          🌙
+        </button>
+        <button
+          id="reset"
+          title="Press this button to reset the game"
+          aria-label="Press this button to reset the game"
+          onclick="resetGame()"
+        >
+          🔄
+        </button>
+        <div
+          class="scoreitem"
+          title="Your score is displayed here"
+          aria-label="Your score is displayed here"
+        >
+          Score: <span id="score">0</span>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
